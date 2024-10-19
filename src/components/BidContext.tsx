@@ -14,13 +14,11 @@ type Product = {
 }
 
 type Notification = {
-
     message: string;
 }
 
 type ProductContextType = {
     products: Product[];
-    // productItem:Product[]
     updateBidAmount: (productId: number, newBidAmount: number, name: string) => void;
     notifications: Notification[];
 }
@@ -37,7 +35,6 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
     const [notifications, setNotifications] = useState<Notification[]>(() => {
         const storeNotifcation = localStorage.getItem('notifications');
         return storeNotifcation ? JSON.parse(storeNotifcation) : []
-
     });
 
     useEffect(() => {
@@ -48,19 +45,16 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
         localStorage.setItem('notifications', JSON.stringify(notifications))
     }, [notifications])
 
-   
     const updateBidAmount = (productId: number, newBidAmount: number, name: string) => {
         setProducts(prevProducts => {
             const updatedProducts = prevProducts.map(product => {
                 if (product.id === productId) {
-                   
                     setNotifications(prev => {
-            
-                        const filteredNotifications =prev.filter(
+                        const messages = prev.filter(
                             notification => !notification.message.includes(product.name)
-                        );
-                        return [
-                            ...filteredNotifications,
+                        );          
+                        return [          
+                            ...messages,
                             {
                                 message: `${name} placed the bid of ₹${newBidAmount} on ${product.name}`
                             }
@@ -73,7 +67,7 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
             return updatedProducts;
         });
     };
-    
+
     return (
         <ProductContext.Provider value={{ products, updateBidAmount, notifications }}>
             {children}
@@ -81,12 +75,11 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
     );
 };
 
-export const useProductContext = () => {
-    const context = useContext(ProductContext);
-    if (!context) {
-        throw new Error("useProductContext must be used within a ProductProvider");
+
+export const useProductContext=()=>{
+    const context=useContext(ProductContext)
+    if(!context){
+        throw new Error("Something went wrong!")
     }
     return context;
-};
-
-
+}

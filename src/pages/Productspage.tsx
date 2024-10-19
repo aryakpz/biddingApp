@@ -20,18 +20,16 @@ export const ProductPage = () => {
 
     const handleClick = (productId: number, uid: number) => {
         nav('/singleproduct', { state: { id: productId, uid: uid } });
-    };
-
-    return (
-        <>
-            <div className="topsection">
+    };  
+                                                 
+    return (                                          
+        <>      
+            <div className="topsection">                                                                    
                 <UserClick />
                 <BidMessage/>
             </div >
-
             <div className="accountuser">
                 <span>Account User: {user.name}</span>
-              
                 {/* {notifications.map((notification)=>(notification.message))} */}
             </div>
             

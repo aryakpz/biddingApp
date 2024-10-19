@@ -23,7 +23,7 @@ export const SingleProduct = () => {
         setInput(e.target.value);
     };
     const handleClick = () => {
-        const newAmount = parseFloat(input);
+        const newAmount = parseFloat(input); 
         const preAmount = parseFloat(preBid.current)
         if (!isNaN(newAmount) && newAmount > 0) {
             if (newAmount > preAmount) {
