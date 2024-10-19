@@ -64,7 +64,6 @@
     max-height: 300px;
     object-fit: center;
     max-width: 300px;
-
 }
 
 .imagesec img {
@@ -131,7 +130,7 @@
     border-radius: 5px;
     font-weight: 600;
     font-size: 20px;
-    margin: 20px;
+    height: max-content;
 }
 
 button {
@@ -151,7 +150,6 @@ button:hover,
 
 .items.single {
     width: 00px;
-
     margin-right: 0;
     padding-right: 0;
 }
@@ -188,10 +186,45 @@ input:focus {
     padding: 10px;
     font-size: 18px;
     font-weight: 600;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .bidselection button {
     height: 41.4px;
     border-radius: 0 3px 3px 0;
+}
 
+.notifications {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.notification {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #e0f7fa;
+    border-radius: 3px;
+}
+
+.topsection {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.message {
+    height: max-content;
+    width: max-content;
+    padding: 14px;
+}
+
+.topsection span {
+    border-bottom: none;
 }

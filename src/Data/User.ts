@@ -1,10 +1,11 @@
-import { User_props } from "../Types/type";
+import { UserProps } from "../Types/type";
 
-export const User_list: User_props = [
+export const UserList: UserProps = [
     {
         id: 1,
         name: "Anjali"
-    }, {
+    }, 
+    {
         id: 2,
         name: "Kavya"
     },
@@ -15,7 +16,8 @@ export const User_list: User_props = [
     {
         id: 4,
         name: "Roy"
-    }, {
+    },
+    {
         id: 5,
         name: "Joji"
     },
@@ -24,3 +26,5 @@ export const User_list: User_props = [
         name: "Meera"
     }
 ]
+
+

@@ -1,11 +1,11 @@
-import { product_props } from "../Types/type";
+import { productProps } from "../Types/type";
 import tshirst from "../images/tshirt.jpeg"
 import shirt from "../images/shirt.jpeg"
 import saree from "../images/sari.jpeg"
 import jeans from "../images/jeans.jpeg"
-import {images} from '../images'
+import { images } from '../images'
 
-export const Product_list: product_props = [
+export const Products: productProps = [
     {
         id: 1,
         name: "T-shirt",
@@ -59,13 +59,9 @@ export const Product_list: product_props = [
     {
         id: 7,
         name: "Sandals",
-        brand: "WoodLand", 
+        brand: "WoodLand",
         amount: 2097,
         img: require("../images/sandal.webp"),
         bid_amount: 0
     }
 ]
-
-
-
-

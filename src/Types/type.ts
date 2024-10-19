@@ -1,9 +1,9 @@
-export type User_props = {
+export type UserProps = {
     id: number;
     name: string;
 }[]
 
-export type product_props = {
+export type productProps = {
     id: number;
     name: string;
     amount: number;
@@ -18,3 +18,13 @@ export type Userclick_props = {
         name: string) => void
 
 }
+export type ProductContextType = {
+    products: productProps[];
+    updateBidAmount: (productId: number, newBidAmount: number) => void;
+}[]
+
+
+export type Notification = {
+    message: string;
+    timestamp: number;
+}[]
