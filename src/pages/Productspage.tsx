@@ -4,10 +4,11 @@ import './home.css';
 import { useLocation, useNavigate } from "react-router-dom";
 import { useProductContext } from "../components/BidContext";
 import { UserClick } from "../components/userclick";
-import { Notification } from "../components/messaeg";
+import { BidMessage } from "../components/messaeg";
+
 
 export const ProductPage = () => {
-    const { productItem,notifications } = useProductContext();
+    const { products,notifications } = useProductContext();
     const nav = useNavigate();
     const loc = useLocation();
     const { id } = loc.state || {};
@@ -21,22 +22,21 @@ export const ProductPage = () => {
         nav('/singleproduct', { state: { id: productId, uid: uid } });
     };
 
-
     return (
         <>
             <div className="topsection">
                 <UserClick />
+                <BidMessage/>
             </div >
 
             <div className="accountuser">
                 <span>Account User: {user.name}</span>
               
-                {notifications.map((notification)=>(notification.message))}
-
+                {/* {notifications.map((notification)=>(notification.message))} */}
             </div>
             
             <div className="productdiv">
-                {productItem.map((item) => (
+                {products.map((item) => (
                     <div className="items" key={item.id}>
                         <div className="datasec">
                             <span className="brand">{item.brand}</span>

@@ -41,7 +41,7 @@ export const SingleProduct = () => {
             <span className="accountuser">Account User: {userId.name}</span>
         </div >
 
-            <div className="singelview">
+            <div className="singleview">
                 <div className="items single">
                     <div className="datasec single">
                         <span className="brand">{item.brand}</span>

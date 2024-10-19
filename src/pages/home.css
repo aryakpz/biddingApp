@@ -1,3 +1,4 @@
+
 .userlist {
     display: flex;
     margin: auto;
@@ -148,15 +149,22 @@ button:hover,
     background-color: rgb(28, 93, 155);
 }
 
+.singleview {
+    margin: 60px;
+    padding: 60px;
+}
+
 .items.single {
-    width: 00px;
+
     margin-right: 0;
     padding-right: 0;
+    min-width: 500px
 }
 
 .singleimage {
     width: 400px;
     height: 400px;
+    margin-left: 33px
 }
 
 .singleview {
@@ -193,23 +201,41 @@ input:focus {
 }
 
 .bidselection button {
-    height: 41.4px;
+    height: 41.5px;
     border-radius: 0 3px 3px 0;
+
 }
 
 .notifications {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
     border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    width: max-content;
+    height: max-content;
 }
 
+.notifications button {
+    right: 20px;
+    position: absolute;
+    width: max-content;
+    padding: 10px 20px;
+}
+
+button:active{
+transform: scale(.98);
+}
 .notification {
+    position: relative;
     margin-bottom: 5px;
-    padding: 5px;
-    background-color: #e0f7fa;
+    padding: 10px;
+    top: 45px;
+    background-color: rgb(211, 211, 211);
+     box-shadow: 0 1px 3px;
     border-radius: 3px;
+    display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    flex-flow: column;
 }
 
 .topsection {
