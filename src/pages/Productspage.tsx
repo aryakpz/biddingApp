@@ -8,7 +8,7 @@ import { BidMessage } from "../components/messaeg";
 
 
 export const ProductPage = () => {
-    const { products,notifications } = useProductContext();
+    const { products, notifications } = useProductContext();
     const nav = useNavigate();
     const loc = useLocation();
     const { id } = loc.state || {};
@@ -20,19 +20,19 @@ export const ProductPage = () => {
 
     const handleClick = (productId: number, uid: number) => {
         nav('/singleproduct', { state: { id: productId, uid: uid } });
-    };  
-                                                 
-    return (                                          
-        <>      
-            <div className="topsection">                                                                    
+    };
+
+    return (
+        <>
+            <div className="topsection">
                 <UserClick />
-                <BidMessage/>
+                <BidMessage />
             </div >
             <div className="accountuser">
                 <span>Account User: {user.name}</span>
                 {/* {notifications.map((notification)=>(notification.message))} */}
             </div>
-            
+
             <div className="productdiv">
                 {products.map((item) => (
                     <div className="items" key={item.id}>
@@ -51,5 +51,7 @@ export const ProductPage = () => {
             </div>
         </>
     );
-};
-   
+}
+
+
+

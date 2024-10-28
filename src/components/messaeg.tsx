@@ -1,35 +1,6 @@
 
-
-// import React, { useState } from 'react';
-// import { useProductContext } from './BidContext';
-
-// export const BidMessage: React.FC = () => {
-//     const { notifications } = useProductContext();
-//     const [showMessages, setShowMessages] = useState(false); 
-//     const handleClick = () => {
-//         setShowMessages(prev => !prev);
-//     };
-
-//     return (
-//         <div className='notifications'>
-//             <button onClick={handleClick}>Bid Messages</button>
-
-//             {showMessages && (
-//                 <ul>
-//                     {notifications.map((notification, index) => (
-//                         <li key={index}>{notification.message}</li>
-//                     ))}
-//                 </ul>
-//             )}
-//         </div>
-//     );
-// };
-
-
-
 import React, { useState } from "react";
-import { ProductProvider, useProductContext } from "./BidContext";
-
+import { useProductContext } from "./BidContext";
 
 export const BidMessage:React.FC=()=>{
     const {notifications} =useProductContext()

@@ -1,8 +1,8 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Products } from '../Data/Product';
-import { productProps } from '../Types/type';
-import { UserList } from '../Data/User';
+// import { productProps } from '../Types/type';
+// import { UserList } from '../Data/User';
 
 type Product = {
     id: number;
@@ -11,7 +11,7 @@ type Product = {
     amount: number;
     bid_amount: number;
     img: string;
-}
+} 
 
 type Notification = {
     message: string;
@@ -24,7 +24,6 @@ type ProductContextType = {
 }
 
 const ProductContext = createContext<ProductContextType | null>(null);
-
 export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
     const [products, setProducts] = useState<Product[]>(() => {
@@ -52,8 +51,8 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
                     setNotifications(prev => {
                         const messages = prev.filter(
                             notification => !notification.message.includes(product.name)
-                        );          
-                        return [          
+                        );
+                        return [
                             ...messages,
                             {
                                 message: `${name} placed the bid of ₹${newBidAmount} on ${product.name}`
@@ -75,10 +74,9 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
     );
 };
 
-
-export const useProductContext=()=>{
-    const context=useContext(ProductContext)
-    if(!context){
+export const useProductContext = () => {
+    const context = useContext(ProductContext)
+    if (!context) {
         throw new Error("Something went wrong!")
     }
     return context;
