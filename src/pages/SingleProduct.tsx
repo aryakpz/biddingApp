@@ -5,6 +5,7 @@ import { UserClick } from "../components/userclick";
 import { useProductContext } from "../components/BidContext";
 import { UserList } from "../Data/User";
 import './home.css';
+import userlogo from '../images/user-solid.svg'
 
 export const SingleProduct = () => {
     const { products, updateBidAmount } = useProductContext();
@@ -38,7 +39,11 @@ export const SingleProduct = () => {
     return (
         <> <div className="topsection">
             <UserClick />
-            <span className="accountuser">Account User: {userId.name}</span>
+            <div className="accountuser">
+                    <span ><img src={userlogo} /> {userId.name}</span>
+                    {/* {notifications.map((notification)=>(notification.message))} */}
+                </div>
+            {/* <span className="accountuser"><img src={userlogo}/>  {userId.name}</span> */}
         </div >
 
             <div className="singleview">

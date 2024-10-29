@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useProductContext } from "../components/BidContext";
 import { UserClick } from "../components/userclick";
 import { BidMessage } from "../components/messaeg";
+import userlogo from '../images/user-solid.svg'
 
 
 export const ProductPage = () => {
@@ -25,15 +26,23 @@ export const ProductPage = () => {
     return (
         <>
             <div className="topsection">
+
                 <UserClick />
-                <BidMessage />
+
+                <div className="accountuser">
+                    <span ><img src={userlogo} /> {user.name}</span>
+                    {/* {notifications.map((notification)=>(notification.message))} */}
+                </div>
+
             </div >
-            <div className="accountuser">
-                <span>Account User: {user.name}</span>
-                {/* {notifications.map((notification)=>(notification.message))} */}
-            </div>
+
 
             <div className="productdiv">
+                <div className="bidmsg">
+                    <BidMessage />
+                </div>
+
+
                 {products.map((item) => (
                     <div className="items" key={item.id}>
                         <div className="datasec">
